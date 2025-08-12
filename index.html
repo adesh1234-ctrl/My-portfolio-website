@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adesh Partap Singh - Web developer , programmer , AI Enthusiast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-bg">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+    <header>
+        <a href="#" class="Logo">Adesh Partap Singh</a>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Skills</a>
+            <a href="#">Education and Achievements</a>
+            <a href="#">Contact</a>
+        </nav>
+
+    </header>
+    <hr>
+
+    <section class="home toggle-section active">
+        <div class="home-img">
+            <img src="c:\Users\adesh\Downloads\adesh.jpg" alt="Profile Picture">
+        </div>
+        <div class="home-contact">
+            <h1>Hello Everyone! It's <span>Adesh Partap Singh</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Computer Science Engineering student at Guru Nanak Dev University Regional Campus, Gurdaspur (Batch 2022–2026). With a strong academic background and a 93% score in the Super Medical stream during my 12th at GSSS Dhar Kalan, I bring both analytical thinking and creative problem-solving to everything I do. I'm passionate about coding, especially in Java, and I enjoy crafting clean, responsive web designs.</p>
+            <br>
+            <p>I'm also exploring AI tools and automation to stay ahead in the ever-evolving tech world.</p>
+            <br>
+            <p>I’m always curious, always learning, and always ready to take on new challenges that blend creativity with technology.</p>
+             <div class="social-icons">
+                <a href="https://www.linkedin.com/in/adesh-partap-singh-459305325/" target="blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/adesh1234-ctrl" target="blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.youtube.com/@Universal_gamerz_2004" target="blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="mailto:adeshpartaps467@gmail.com" target="blank"><i class="fa-brands fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+    <section class="skills-section toggle-section" id="skills" style="display:none;">
+    <div class="skills-content">
+        <h2>My Skills</h2>
+        <ul>
+            <li>Java</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>AI Tools</li>
+            <li>Web Development with AI</li>
+            <li>Good Communication Skills</li>
+        </ul>
+    </div>
+</section>
+<section class="education-section toggle-section" id="education" style="display:none;">
+    <div class="education-content">
+        <h2>Education and Achievements</h2>
+        <ul>
+            <li>Class 10 from Saint Joseph's Convent Sec. School, Pathankot (82.4%)</li>
+            <li>Class 12 from GSSS Dhar Kalan, Pathankot (Super Medical Stream, 93%)</li>
+            <li>B.Tech CSE from GNDU RC Gurdaspur (2022–2026)</li>
+            <li>Founded the perfect use of AI in Web Development</li>
+        </ul>
+    </div>
+</section>
+<section class="contact-section toggle-section" id="contact" style="display:none;">
+    <div class="contact-content">
+        <h2>Contact Me</h2>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/adesh-partap-singh-459305325/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/adesh1234-ctrl" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.youtube.com/@Universal_gamerz_2004" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="mailto:adeshpartaps467@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('nav a');
+        const homeSection = document.querySelector('.home');
+        const skillsSection = document.getElementById('skills');
+        const educationSection = document.getElementById('education');
+        const contactSection = document.getElementById('contact');
+
+        function hideAll() {
+            homeSection.style.display = 'none';
+            skillsSection.style.display = 'none';
+            educationSection.style.display = 'none';
+            contactSection.style.display = 'none';
+        }
+
+        if (navLinks.length >= 4 && homeSection && skillsSection && educationSection && contactSection) {
+            // Home
+            navLinks[0].addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAll();
+                homeSection.style.display = 'flex';
+            });
+            // Skills
+            navLinks[1].addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAll();
+                skillsSection.style.display = 'flex';
+            });
+            // Education
+            navLinks[2].addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAll();
+                educationSection.style.display = 'flex';
+            });
+            // Contact
+            navLinks[3].addEventListener('click', function(e) {
+                e.preventDefault();
+                hideAll();
+                contactSection.style.display = 'flex';
+            });
+        }
+    });
+</script>
+</body>
+</html>

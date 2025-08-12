@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 80%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    color: #22223b;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated gradient overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -2;
+    background: linear-gradient(120deg, #e63946 0%, #f8fafc 50%, #e0e7ff 100%);
+    opacity: 0.18;
+    animation: gradientMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Floating circles animation */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 10% 20%, #e63946 0%, transparent 60%) 0 0/300px 300px,
+        radial-gradient(circle at 80% 80%, #22223b 0%, transparent 70%) 0 0/400px 400px,
+        radial-gradient(circle at 60% 30%, #e0e7ff 0%, transparent 60%) 0 0/250px 250px;
+    background-repeat: no-repeat;
+    animation: floatCircles 12s linear infinite alternate;
+}
+
+@keyframes floatCircles {
+    0% {
+        background-position:
+            10% 20%,
+            80% 80%,
+            60% 30%;
+    }
+    100% {
+        background-position:
+            20% 30%,
+            70% 70%,
+            50% 40%;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 8%;
+    background: wheat;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    
+}
+
+.Logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #22223b;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+}
+
+.Logo:hover {
+    transform: scale(1.1);
+    color: #e63946;
+}
+
+nav a {
+    font-size: 1.3rem;
+    color: #22223b;
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+    color: #e63946;
+    border-bottom: 2px solid #e63946;
+}
+
+section.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+@keyframes redGlow {
+    0% {
+        box-shadow: 0 0 20px 0 #e63946, 0 0 0px 0 #e63946;
+    }
+    50% {
+        box-shadow: 0 0 40px 10px #e63946, 0 0 20px 5px #e63946;
+    }
+    100% {
+        box-shadow: 0 0 20px 0 #e63946, 0 0 0px 0 #e63946;
+    }
+}
+
+.home-img img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 0 20px 0 #e63946;
+    border: 6px solid #e63946;
+    background: #fff;
+    animation: redGlow 2s infinite;
+}
+
+.home-contact {
+    margin-left: 3rem;
+    max-width: 600px;
+    background: rgba(255,255,255,0.85);
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+
+.home-contact h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.home-contact h1 span {
+    color: #e63946;
+}
+
+.home-contact h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #22223b;
+}
+
+.home-contact p {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 1.2rem;
+    font-size: 2rem;
+    color: #22223b;
+    background: wheat;
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.social-icons a:hover {
+    color: #fff;
+    background: #e63946;
+    transform: scale(1.15);
+}
+
+.skills-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.skills-content {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    color: black;
+}
+
+.skills-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e63946;
+}
+
+.skills-content ul {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.skills-content li {
+    margin-bottom: 0.7rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.skills-content li::before {
+    content: "•";
+    color: #e63946;
+    position: absolute;
+    left: 0;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.contact-content {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    color: black;
+    text-align: center;
+}
+
+.contact-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e63946;
+}
+
+.education-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.education-content {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    color: black;
+    text-align: center;
+}
+
+.education-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e63946;
+}
+
+.education-content ul {
+    list-style: none;
+    font-size: 1.2rem;
+    padding-left: 0;
+}
+
+.education-content li {
+    margin-bottom: 0.7rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.education-content li::before {
+    content: "•";
+    color: #e63946;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 900px) {
+    section.home {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+    .home-img {
+        margin-bottom: 2rem;
+    }
+    .home-contact {
+        margin-left: 0;
+        width: 90%;
+    }
+    header {
+        padding: 1rem 3%;
+    }
+    nav a {
+        margin-left: 1rem;
+    }
+}
+
+
